@@ -13,7 +13,7 @@ public class Customer implements Observer{
     public void notifyAboutPriceUpdate(String cloth, int oldPrice, int newPrice) {
         if(cloth.equals(trackingCloth)) {
             System.out.println("Hello " + login + " \nproduct: " + trackingCloth + " with old price " +
-                    oldPrice + " changed to: " + newPrice + "\nSale: " + (float)newPrice/oldPrice*100 + " %\n");
+                    oldPrice + " changed to: " + newPrice + "\nSale: " + Math.floor((100 - (float)newPrice/oldPrice*100)) + " %\n");
         }
     }
 }
